@@ -10,7 +10,6 @@
 namespace cframe {
 
 Player::Player() {
-	// TODO Auto-generated constructor stub
 
 }
 

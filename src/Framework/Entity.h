@@ -1,49 +1,67 @@
 /*
  * Entity.h
  *
- *  Created on: Mar 13, 2015
+ *  Created on: Mar 17, 2015
  *      Author: zach
  */
 
-/*
-#ifndef FRAMEWORK_ENTITY_H_
-#define FRAMEWORK_ENTITY_H_
+#ifndef FRAMEWORK_NODES_ENTITY_H_
+#define FRAMEWORK_NODES_ENTITY_H_
 
-#include <cmath>
+#include <vector> //Useless include but imma still keep it here kuz swag
+
+#include "Nodes/AppearanceNode.h"
+#include "Nodes/MovementNode.h"
+#include "Nodes/PositionNode.h"
+
+#include "Components/ICollidable.h"
+#include "Components/IVisible.h"
+#include "Components/IMovable.h"
 
 namespace cframe {
 
-class Entity : public Sprite {
+/*
+ * The entity class represents anything that is not bound
+ * to the grid and has more than just a few properties.
+ * Tiles (excluding TileEntities) are not childs of the
+ * Entity class. Particles are also not, as they have very
+ * few properties, and need to be as lightweight as possible.
+ */
+
+class Entity {
 public:
-	Entity();
+	//Instantiating the class requires instances of the certain properties as well
+	//as a starting x and y
+	Entity(IVisible*, ICollidable*, IMovable*, float x, float y);
 	virtual ~Entity();
 
-	void SetMovementRotation(float angle);
-	void SetRotation(float angle);
-	void IncrementRotation(float inc);
-	void IncrementMovementRotation(float inc);
+	//Simple getter methods to get components
+	IVisible* GetRenderComponent();
+	IMovable* GetMovementComponent();
+	ICollidable* GetCollisionComponent();
 
-	float GetRotation();
-	float GetMovementRotation();
+	//Shortcuts to setting things through Position nodes
+	void SetX(float x);
+	void SetY(float y);
 
-	void SetDX(float speed);
-	void SetDY(float speed);
-
-	float GetDX();
-	float GetDY();
-
-	void CalculateSpeedForward(float speed);
-
-	virtual void Update();
+	float GetX();
+	float GetY();
 
 private:
-	float rotation;
+	//Components
+	ICollidable* collisionComponent;
+	IVisible* renderComponent;
+	IMovable* motionComponent;
 
-	float dx;
-	float dy;
+	void InitComponents();
+
+protected:
+	//Nodes store all of the data of the entity (i.e. Color, Position, etc.)
+	AppearanceNode* appearance;
+	MovementNode* movement;
+	PositionNode* position;
 };
 
 } /* namespace cframe */
 
-/*
-#endif /* FRAMEWORK_ENTITY_H_ */
+#endif /* FRAMEWORK_NODES_ENTITY_H_ */

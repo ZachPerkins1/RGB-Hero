@@ -16,7 +16,6 @@ public:
 	virtual ~SpriteManager();
 	void AddSprite();
 
-	Sprite* spriteList = new Sprite[10];
 
 	int index;
 

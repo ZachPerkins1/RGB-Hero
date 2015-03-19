@@ -10,7 +10,7 @@
 
 namespace cframe {
 
-class Tile : public cframe::Sprite {
+class Tile {
 public:
 	Tile();
 	virtual ~Tile();

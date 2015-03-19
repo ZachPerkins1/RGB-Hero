@@ -8,11 +8,13 @@
 #ifndef LEVEL_LEVEL_H_
 #define LEVEL_LEVEL_H_
 
+#include "SFML/System.hpp"
+
 namespace cframe {
 
 class Level {
 public:
-	Level(sf::Uint8 level[]);
+	Level();
 	virtual ~Level();
 };
 
