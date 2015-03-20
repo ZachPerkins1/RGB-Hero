@@ -25,8 +25,15 @@ public:
 	AppearanceNode() {}
 	virtual ~AppearanceNode() {}
 
+	virtual void PushInfo(sf::Sprite* sprite) {
+		if (sprite->getColor() != color) {
+			sprite->setColor(*color);
+		}
+
+		sprite->scale(sf::Vector2f(scale, scale));
+	}
+
 	sf::Color* color;
-	sf::Texture* texture;
 	float scale = 1.0F;
 };
 

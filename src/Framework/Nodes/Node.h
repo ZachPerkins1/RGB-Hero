@@ -10,6 +10,9 @@
 
 namespace cframe {
 
+#include <vector>
+#include "SFML/Graphics.hpp"
+
 /*
  * Nodes store primitive information about
  * an entity for use in components
@@ -19,6 +22,8 @@ class Node {
 public:
 	Node() {}
 	virtual ~Node() {}
+
+	virtual void PushInfo(sf::Sprite* sprite);
 
 	//Whether or not the node has been used in a component
 	bool used = false;

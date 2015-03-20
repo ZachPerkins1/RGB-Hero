@@ -14,15 +14,19 @@
 namespace cframe {
 
 /*
- * The movement node stores the very simple all
- * of the information that position does, just in
- * terms of speed.
+ * The movement node stores the very simple
+ * speed information
  */
 
 class MovementNode : public Node {
 public:
 	MovementNode() {}
 	virtual ~MovementNode() {}
+
+	virtual void PushInfo(sf::Sprite* sprite) {
+			sprite->rotate(drot);
+			sprite->move(sf::Vector2f(dx, dy));
+	}
 
 	//'D' as in delta, future Zach, you idiot
 	float dx = 0.0f;
