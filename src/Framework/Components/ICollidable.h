@@ -10,15 +10,11 @@
 
 #include "IComponent.h"
 
-namespace cframe {
-
 class ICollidable : public IComponent {
 public:
-	ICollidable();
+	ICollidable(Sprite* base);
 	virtual ~ICollidable();
 
 };
-
-} /* namespace cframe */
 
 #endif /* FRAMEWORK_COMPONENTS_ICOLLIDABLE_H_ */

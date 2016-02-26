@@ -8,14 +8,10 @@
 #ifndef FRAMEWORK_PLAYER_H_
 #define FRAMEWORK_PLAYER_H_
 
-namespace cframe {
-
 class Player {
 public:
 	Player();
 	virtual ~Player();
 };
-
-} /* namespace cframe */
 
 #endif /* FRAMEWORK_PLAYER_H_ */

@@ -7,9 +7,8 @@
 
 #include "IMovable.h"
 
-namespace cframe {
 
-IMovable::IMovable() {
+IMovable::IMovable(Sprite* base) : IComponent("Movable", base) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -18,4 +17,3 @@ IMovable::~IMovable() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace cframe */

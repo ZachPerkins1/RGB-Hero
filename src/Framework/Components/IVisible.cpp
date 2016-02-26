@@ -6,16 +6,13 @@
  */
 
 #include "IVisible.h"
+#include "../Systems/RenderingSystem.h"
 
-namespace cframe {
-
-IVisible::IVisible() {
-	// TODO Auto-generated constructor stub
-
+IVisible::IVisible(Sprite* base) : IComponent("Visible", base) {
+	RenderingSystem::getInstance()->add(this);
 }
 
 IVisible::~IVisible() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace cframe */

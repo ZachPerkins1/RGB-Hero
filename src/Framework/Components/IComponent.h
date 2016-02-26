@@ -8,20 +8,22 @@
 #ifndef FRAMEWORK_COMPONENTS_ICOMPONENT_H_
 #define FRAMEWORK_COMPONENTS_ICOMPONENT_H_
 
-#include "../Nodes/AppearanceNode.h"
-#include "../Nodes/MovementNode.h"
-#include "../Nodes/PositionNode.h"
-
-namespace cframe {
+#include <string>
+#include "../Sprite.h"
 
 class IComponent {
 public:
-	IComponent();
+	IComponent(std::string name, Sprite* base);
 	virtual ~IComponent();
 
-	virtual void Init(AppearanceNode*, MovementNode*, PositionNode*) {}
-};
+	std::string getName();
 
-} /* namespace cframe */
+private:
+	std::string name;
+
+protected:
+	Sprite* base;
+
+};
 
 #endif /* FRAMEWORK_COMPONENTS_ICOMPONENT_H_ */

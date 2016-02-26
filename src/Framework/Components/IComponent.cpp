@@ -7,15 +7,14 @@
 
 #include "IComponent.h"
 
-namespace cframe {
-
-IComponent::IComponent() {
-	// TODO Auto-generated constructor stub
-
+IComponent::IComponent(std::string name, Sprite* base) {
+	this->name = name;
+	this->base = base;
 }
 
-IComponent::~IComponent() {
-	// TODO Auto-generated destructor stub
+IComponent::~IComponent() {}
+
+std::string IComponent::getName() {
+	return name;
 }
 
-} /* namespace cframe */

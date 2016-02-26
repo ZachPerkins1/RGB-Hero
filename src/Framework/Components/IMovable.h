@@ -10,14 +10,10 @@
 
 #include "IComponent.h"
 
-namespace cframe {
-
-class IMovable : public IComponent{
+class IMovable : public IComponent {
 public:
-	IMovable();
+	IMovable(Sprite* base);
 	virtual ~IMovable();
 };
-
-} /* namespace cframe */
 
 #endif /* FRAMEWORK_COMPONENTS_IMOVABLE_H_ */

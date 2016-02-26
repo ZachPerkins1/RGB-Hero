@@ -10,14 +10,10 @@
 
 #include "IComponent.h"
 
-namespace cframe {
-
 class IVisible : public IComponent {
 public:
-	IVisible();
+	IVisible(Sprite* base);
 	virtual ~IVisible();
 };
-
-} /* namespace cframe */
 
 #endif /* FRAMEWORK_COMPONENTS_IVISIBLE_H_ */

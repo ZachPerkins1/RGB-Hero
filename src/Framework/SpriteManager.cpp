@@ -5,9 +5,7 @@
  *      Author: zach
  */
 
-#include "../Framework/SpriteManager.h"
-
-namespace cframe {
+#include "SpriteManager.h"
 
 SpriteManager::SpriteManager() {
 
@@ -20,5 +18,3 @@ SpriteManager::~SpriteManager() {
 void SpriteManager::AddSprite() {
 
 }
-
-} /* namespace cframe */

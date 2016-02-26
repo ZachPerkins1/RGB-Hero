@@ -7,8 +7,6 @@
 
 #include "Player.h"
 
-namespace cframe {
-
 Player::Player() {
 
 }
@@ -16,5 +14,3 @@ Player::Player() {
 Player::~Player() {
 	// TODO Auto-generated destructor stub
 }
-
-} /* namespace cframe */

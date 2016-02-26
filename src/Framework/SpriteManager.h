@@ -8,8 +8,6 @@
 #ifndef FRAMEWORK_SPRITEMANAGER_H_
 #define FRAMEWORK_SPRITEMANAGER_H_
 
-namespace cframe {
-
 class SpriteManager {
 public:
 	SpriteManager();
@@ -21,7 +19,5 @@ public:
 
 
 };
-
-} /* namespace cframe */
 
 #endif /* FRAMEWORK_SPRITEMANAGER_H_ */
